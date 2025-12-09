@@ -56,17 +56,17 @@ class changeRona extends HTMLElement {
 			// Identify Inbound calls and pause recording when call is answered
 			if (e.data.interaction.mediaType === 'telephony' && e.data.interaction.contactDirection.type === 'INBOUND') {
 				logger.info(`interactionId: ${e.data.interactionId}`);
-				this.pauseRecording(e.data.interactionId);
+				//this.pauseRecording(e.data.interactionId);
 			}
 		}));
 
-		Desktop.agentContact.addEventListener("ePauseRecording", (e => {
-			logger.info("Recording Paused!");
-		}));
+		// Desktop.agentContact.addEventListener("ePauseRecording", (e => {
+		// 	logger.info("Recording Paused!");
+		// }));
 
-		Desktop.agentContact.addEventListener("eResumeRecording", (e => {
-			logger.info("Recording Resumed!");
-		}));
+		// Desktop.agentContact.addEventListener("eResumeRecording", (e => {
+		// 	logger.info("Recording Resumed!");
+		// }));
 
 		Desktop.agentContact.addEventListener("eAgentOfferContactRona", (e => {
 			logger.info('[change-rona]RONA triggered!')
